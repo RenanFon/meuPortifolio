@@ -7,14 +7,19 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-image: url('/imagens/fotos/space-purple-blue-astronomy-wallpaper.jpg');
+}
+
+img{
+    max-width: 100%;
+    background-repeat: no-repeat;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-image: linear-gradient(to right,black,rgba(12, 12, 12, 0.815),rgba(7, 7, 7, 0));
 }
 
 .menu ul{
@@ -52,6 +57,7 @@ header{
 
 }
 
+
 header h1{
     margin-left: 30px;
     font-size: 1.7rem;
@@ -75,4 +81,136 @@ header h1 span::after{
     z-index: -2;
     height: 2px;
     background-color: rgb(65, 88, 190);
+}
+.principal{
+    margin-top: 100px;
+    display: flex;
+    margin-left: 60px;
+    margin-right: 60px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.452);
+    backdrop-filter: blur(1px);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315);
+    border-top: 3px solid #101870;
+    border-right: 3px solid #101870;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    
+}
+.principal .apresentacao{
+    margin-right: 15px;
+}
+.principal img{
+    width: 900px;
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+.redes{
+    background-color: rgba(255, 255, 255, 0.301);
+    width: 220px;
+    padding: 1px;
+    margin: 0 auto;
+    border-radius: 0px 0px 4px 4px;
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+
+.redes ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.redes li{
+    list-style-type: none;
+    margin-right: 20px;
+
+}
+.redes img{
+    padding: 3px;
+    transition: .4s;
+}
+.redes img:hover{
+    background-color: rgba(255, 255, 255, 0.507);
+    box-shadow: 2px 2px 2px black;
+    border-radius: 4px;
+}
+
+footer{
+ background-color: rgba(0, 0, 0, 0.582);
+ color: white;
+ padding: 15px;
+ text-align: center;
+ border-top: 3px solid #101870;
+ font-family: Arial, Helvetica, sans-serif;
+ border-radius: 4px;
+}
+
+
+@media(min-width:800px){
+    .principal{
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    header h1{
+        margin-left: 150px;
+    }
+    .menu ul{
+        margin-right: 150px;
+    }
+    footer{
+        width: 600px;
+        margin: 0 auto;
+        border-right: 3px solid #101870;
+    }
+}
+
+@media(max-width:700px){
+    header{
+        flex-wrap: wrap;
+    }
+    .principal img{
+        display: none;
+    }
+    .redes ul{
+        flex-wrap: wrap;
+    }
+}
+@media(max-width:580px){
+    header h1{
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+@media(max-width:547px){
+    .menu{
+        margin: 0 auto;
+    } 
+}
+
+
+@media(max-width:460px){
+    header h1{
+        display: block;
+    }
+    .menu{
+        margin-left: 150px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .menu ul{
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+        
+    }
+    .menu li{
+        margin-right: 20px;
+    }
 }
