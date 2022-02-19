@@ -102,6 +102,14 @@ header h1 span::after{
 .principal .apresentacao{
     margin-right: 15px;
 }
+
+.corazul{
+    color: var(--cor1);
+}
+
+.principal .apresentacao span{
+    color: var(--cor1);
+}
 .principal img{
     width: 900px;
     border-radius: 50%;
