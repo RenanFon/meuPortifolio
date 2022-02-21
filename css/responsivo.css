@@ -1,0 +1,123 @@
+@media(min-width:800px){
+    .principal{
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    header h1{
+        margin-left: 20px;
+    }
+    .menu ul{
+        margin-right: 150px;
+    }
+    footer{
+        width: 600px;
+        margin: 0 auto;
+        border-right: 3px solid #101870;
+    }
+}
+@media(max-width:1600px){
+    header h1{
+        margin-left: -390px;
+    }
+}
+@media(max-width:1300px){
+    header h1{
+        margin-left: -220px;
+    }
+}
+@media(max-width:900px){
+   header h1{
+       margin-left: 70px;
+   }
+}
+@media(max-width:1040px){
+    header h1{
+        margin-left: -90px;
+    }
+ }
+
+@media(max-width:700px){
+    header{
+        flex-wrap: wrap;
+    }
+    header h1{
+        text-align: center;
+        margin: 0 auto;
+        
+    }
+    .principal img{
+        display: none;
+    }
+    .redes ul{
+        flex-wrap: wrap;
+    }
+    .contato{
+        flex-direction: column;
+    }
+    .sobre img{
+        display: none;
+    }
+    header::before{
+        display: none;
+        
+    }
+}
+@media(max-width:580px){
+    header h1{
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .formacao{
+        margin-bottom: 140px;
+    }
+}
+@media(max-width:547px){
+    .menu{
+        margin: 0 auto;
+    } 
+    .form img{
+        display: none;
+    }
+    .formacao{
+        margin-bottom: 100px;
+        border: none;
+    }
+}
+
+
+@media(max-width:460px){
+    header h1{
+        display: block;
+        width: max-content;
+        
+    }
+    .principal{
+        border: none;
+    }
+    .menu{
+        margin-left: 150px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .menu ul{
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 20px;
+        
+    }
+    .menu li{
+        margin-right: 20px;
+        margin-top: 20px;
+        padding: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.397);
+        width: 120px;
+    }
+    .menu a{
+        margin-right: 40px;
+    }
+    .formacao{
+        margin-bottom: 240px;
+    }
+}
