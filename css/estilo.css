@@ -8,7 +8,9 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(6, 7, 29);
     background-image: url('/imagens/fotos/fundo3.jpg');
+    
 }
 
 img{
