@@ -55,8 +55,11 @@
     .contato{
         flex-direction: column;
     }
+    .sobre{
+        flex-wrap: wrap;
+    }
     .sobre img{
-        display: none;
+       margin-left: 100px; 
     }
     header::before{
         display: none;
@@ -120,4 +123,13 @@
     .formacao{
         margin-bottom: 240px;
     }
+    .sobre img{
+        margin-left: 50px; 
+     }
+}
+
+@media(max-width:360px){
+    .sobre img{
+        margin-left: 40px; 
+     }
 }
