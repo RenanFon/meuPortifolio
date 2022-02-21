@@ -23,6 +23,14 @@ header{
     background-image: linear-gradient(to right,black,rgba(12, 12, 12, 0.815),rgba(7, 7, 7, 0));
     border-bottom: 2px solid rgba(131, 131, 131, 0.281);
 }
+header::before{
+    content: ' ';
+    width: 0;
+    height: 0; 
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-left: 50px solid #0a1ac4;;
+}
 
 .menu ul{
     display: flex;
@@ -198,7 +206,7 @@ footer{
         margin-top: 100px;
     }
     header h1{
-        margin-left: 150px;
+        margin-left: 20px;
     }
     .menu ul{
         margin-right: 150px;
@@ -209,6 +217,26 @@ footer{
         border-right: 3px solid #101870;
     }
 }
+@media(max-width:1600px){
+    header h1{
+        margin-left: -390px;
+    }
+}
+@media(max-width:1300px){
+    header h1{
+        margin-left: -220px;
+    }
+}
+@media(max-width:900px){
+   header h1{
+       margin-left: 70px;
+   }
+}
+@media(max-width:1040px){
+    header h1{
+        margin-left: -90px;
+    }
+ }
 
 @media(max-width:700px){
     header{
@@ -217,6 +245,7 @@ footer{
     header h1{
         text-align: center;
         margin: 0 auto;
+        
     }
     .principal img{
         display: none;
@@ -229,6 +258,10 @@ footer{
     }
     .sobre img{
         display: none;
+    }
+    header::before{
+        display: none;
+        
     }
 }
 @media(max-width:580px){
@@ -287,17 +320,17 @@ footer{
     background-color: rgb(0, 0, 0);
     border-top: 2px solid #0715BD;
     padding-top: 60px;
-    animation: mudarcor 2.5s ;
+    animation: mudarcor 2s ;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
 @keyframes mudarcor{
     from{
-        border-top:3px solid #101870;
+        border-top:3px solid #0514c0;
     }
     to{
-        border-top: 3px solid rgba(212, 208, 208, 0.596);
+        border-top: 3px solid rgba(255, 255, 255, 0.596);
     }
 }
 
@@ -415,7 +448,7 @@ footer{
     }
 
     #projetos{
-        background-color: rgba(255, 255, 255, 0.726);
+        background-color: rgba(255, 255, 255, 0.541);
         display: flex;
         justify-content: center;
         border-bottom: 2px solid #101870;
