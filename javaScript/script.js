@@ -69,3 +69,9 @@ function animascroll(){
 window.addEventListener('scroll',animascroll)
 
 animascroll()
+
+function dom(Selector){
+    const elementList = document.querySelectorAll(Selector);
+
+    console.log(elementList);
+}

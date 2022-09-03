@@ -65,8 +65,8 @@ header::before{
 .menu a:hover{
     border-bottom: 2px solid white;
     color: white;
-
-
+    background-color: rgba(128, 128, 128, 0.151);
+    border-radius: 1px;
 }
 
 
