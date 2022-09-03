@@ -63,7 +63,7 @@ header::before{
     font-size: 1rem;
 }
 .menu a:hover{
-    border-bottom: 2px solid white;
+    border-bottom:2px solid white;
     color: white;
     background-color: rgba(128, 128, 128, 0.151);
     border-radius: 1px;
@@ -102,7 +102,7 @@ header h1 span::after{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.452);
     backdrop-filter: blur(1px);
-    padding: 20px;
+    padding: 60px;
     border-radius: 4px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315);
     border-top: 3px solid #101870;
@@ -113,7 +113,7 @@ header h1 span::after{
     
 }
 .principal .apresentacao{
-    margin-right: 15px;
+    margin-right: 30px;
 }
 
 .corazul{
