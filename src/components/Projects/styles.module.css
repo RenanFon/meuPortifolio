@@ -1,0 +1,25 @@
+.projectsSection {
+  padding: var(--espacamento-padrao);
+  text-align: center;
+}
+
+.sectionTitle {
+  margin-bottom: 2rem;
+  color: var(--cor-secundaria);
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--cor-primaria);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.githubLink:hover {
+  background-color: #232578;
+}

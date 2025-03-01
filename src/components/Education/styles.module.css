@@ -1,0 +1,46 @@
+.educationSection {
+  padding: var(--espacamento-padrao);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--cor-secundaria);
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.educationCard {
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.educationCard h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.coursesList {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.coursesList li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.coursesList li::before {
+  content: "•";
+  color: var(--cor-primaria);
+  position: absolute;
+  left: -1rem;
+}

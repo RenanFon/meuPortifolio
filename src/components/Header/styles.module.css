@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--espacamento-padrao);
+  background-color: var(--cor-fundo);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: var(--cor-secundaria);
+}
+
+.logo span {
+  color: var(--cor-primaria);
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--cor-secundaria);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--cor-primaria);
+}
+
+/* ...resto dos estilos do header... */

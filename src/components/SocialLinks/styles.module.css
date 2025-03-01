@@ -1,0 +1,18 @@
+.socialLinks {
+  padding: 1rem var(--espacamento-padrao);
+}
+
+.socialLinks ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.socialLinks img {
+  transition: transform 0.3s;
+}
+
+.socialLinks img:hover {
+  transform: translateY(-3px);
+}

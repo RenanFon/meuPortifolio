@@ -1,0 +1,30 @@
+:root {
+  --cor-primaria: #2E3192;
+  --cor-secundaria: #333;
+  --cor-texto: #666;
+  --cor-fundo: #fff;
+  --espacamento-padrao: 2rem;
+  --fonte-principal: 'Rubik', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

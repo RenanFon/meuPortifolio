@@ -1,0 +1,47 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacamento-padrao);
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.apresentacao {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.apresentacao h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--cor-secundaria);
+}
+
+.apresentacao span {
+  color: var(--cor-primaria);
+}
+
+.destaque {
+  color: var(--cor-primaria);
+}
+
+.profileImage img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .apresentacao {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
