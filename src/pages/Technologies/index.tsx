@@ -165,8 +165,10 @@ export function Technologies() {
               {section.technologies.map((tech) => (
                 <div key={tech.name} className={styles.techCard}>
                   <div className={styles.techInfo}>
-                    <h4>{tech.name}</h4>
-                    <span className={styles.techIcon}>{tech.icon}</span>
+                    <div className={styles.techHeader}>
+                      <span className={styles.techIcon}>{tech.icon}</span>
+                      <h4>{tech.name}</h4>
+                    </div>
                     <p>{tech.description}</p>
                     <div className={styles.coursesList}>
                       <h5>

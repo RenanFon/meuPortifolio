@@ -187,14 +187,14 @@
   gap: 1.5rem;
 }
 
-.techName {
+.techHeader {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.techName h4 {
+.techHeader h4 {
   font-size: 1.5rem;
   color: var(--cor-texto);
 }
@@ -202,25 +202,24 @@
 .techIcon {
   color: var(--cor-primaria);
   background: rgba(59, 130, 246, 0.1);
-  padding: 0.75rem;
-  border-radius: 12px;
-  border: 1px solid var(--cor-primaria);
-  box-shadow: var(--efeito-neon);
-  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .techCard:hover .techIcon {
-  transform: rotate(360deg);
-  background: var(--cor-primaria);
-  color: var(--cor-texto);
+  transform: none;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--cor-primaria);
 }
 
 .techInfo p {
   color: var(--cor-texto-suave);
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
-  padding-left: 3.25rem; /* Alinha com o ícone */
+  margin: 1rem 0;
 }
 
 .coursesList {
