@@ -11,13 +11,10 @@
 .aboutSection {
   padding: var(--espacamento-padrao);
   min-height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem var(--espacamento-padrao);
   background: var(--cor-fundo-secundaria);
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .aboutSection::before {
@@ -27,11 +24,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(37, 99, 235, 0.1) 0%,
-    rgba(15, 23, 42, 0) 50%
-  );
+  background: var(--gradiente-fundo);
   pointer-events: none;
 }
 
