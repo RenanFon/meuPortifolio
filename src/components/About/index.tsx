@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.css';
-import profilePhoto from '@/assets/images/154706152_2840956502830419_371064825344242994_n.jpg';
 
 export function About() {
   return (
@@ -12,45 +11,29 @@ export function About() {
             <h3>Renan Antunes Fonseca</h3>
             <span>Desenvolvedor Full Stack</span>
           </div>
-          <p className={styles.bioText}>
-            Desenvolvedor web focado em criar soluções eficientes e escaláveis. 
-            Atualmente cursando o último módulo de Análise e Desenvolvimento de Sistemas, 
-            busco constantemente aprender e aplicar novas tecnologias.
-          </p>
-        </div>
-
-        <div className={styles.skillsContainer}>
-          <h3>Tecnologias</h3>
-          <div className={styles.skillGroups}>
-            <div className={styles.skillGroup}>
-              <h4>Frontend</h4>
-              <ul className={styles.skillsList}>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>React</li>
-              </ul>
-            </div>
-            <div className={styles.skillGroup}>
-              <h4>Backend</h4>
-              <ul className={styles.skillsList}>
-                <li>SQL</li>
-                <li>Delphi</li>
-                <li>Node.js</li>
-              </ul>
-            </div>
-            <div className={styles.skillGroup}>
-              <h4>Ferramentas</h4>
-              <ul className={styles.skillsList}>
-                <li>Git</li>
-                <li>VS Code</li>
-                <li>GitHub</li>
+          <div className={styles.bioContent}>
+            <p className={styles.bioText}>
+              Desenvolvedor apaixonado por criar soluções eficientes e escaláveis. 
+              Com experiência em desenvolvimento web e sistemas corporativos, 
+              busco sempre aplicar as melhores práticas e padrões de projeto para 
+              entregar código de qualidade.
+            </p>
+            <p className={styles.bioText}>
+              Atualmente, atuo no desenvolvimento e manutenção de sistemas empresariais, 
+              com foco em melhorar a qualidade do código e a eficiência dos processos 
+              de desenvolvimento. Tenho experiência com metodologias ágeis e trabalho 
+              em equipe.
+            </p>
+            <div className={styles.interests}>
+              <h4>Áreas de Interesse</h4>
+              <ul>
+                <li>Arquitetura de Software</li>
+                <li>Clean Code</li>
+                <li>DevOps</li>
+                <li>Testes Automatizados</li>
               </ul>
             </div>
           </div>
-        </div>
-        <div className={styles.aboutImage}>
-          <img src={profilePhoto} alt="Foto profissional de Renan Fonseca" />
         </div>
       </div>
     </section>

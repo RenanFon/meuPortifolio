@@ -1,18 +1,45 @@
 :root {
-  --cor-primaria: #2563eb;
-  --cor-secundaria: #3b82f6;
-  --cor-terciaria: #60a5fa;
+  /* Cores principais */
+  --cor-primaria: #2563eb; /* Azul principal */
+  --cor-secundaria: #4f46e5; /* Roxo-azulado */
+  --cor-terciaria: #0ea5e9; /* Azul claro */
+  --cor-destaque: #10b981; /* Verde aqua */
+  --cor-acento: #8b5cf6; /* Roxo */
+  
+  /* Tons de fundo */
+  --cor-fundo: #0a1128;
+  --cor-fundo-secundaria: #0f1835;
+  --cor-fundo-card: rgba(23, 36, 71, 0.7);
+  --cor-fundo-hover: rgba(37, 99, 235, 0.1);
+  
+  /* Tons de texto */
   --cor-texto: #e2e8f0;
   --cor-texto-suave: #94a3b8;
-  --cor-fundo: #0f172a;
-  --cor-fundo-secundaria: #1e293b;
-  --cor-fundo-card: rgba(30, 41, 59, 0.7);
-  --espacamento-padrao: 2rem;
-  --fonte-principal: 'Inter', 'Rubik', sans-serif;
-  --borda-radius: 12px;
+  --cor-texto-destaque: #ffffff;
+  
+  /* Gradientes */
+  --gradiente-primario: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  --gradiente-hover: linear-gradient(135deg, var(--cor-terciaria), var(--cor-acento));
+  --gradiente-card: linear-gradient(
+    170deg,
+    rgba(37, 99, 235, 0.1) 0%,
+    rgba(79, 70, 229, 0.1) 100%
+  );
+  
+  /* Efeitos */
   --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                   0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --efeito-neon: 0 0 10px var(--cor-primaria),
+                 0 0 20px rgba(37, 99, 235, 0.5);
+  --efeito-neon-texto: 0 0 5px rgba(37, 99, 235, 0.7);
+  
+  /* Outros */
+  --espacamento-padrao: 2rem;
+  --borda-radius: 12px;
   --transicao-padrao: all 0.3s ease;
+  --fonte-principal: 'Inter', 'Rubik', sans-serif;
 }
 
 * {
@@ -110,18 +137,19 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--cor-primaria);
-  color: var(--cor-texto);
+  background: var(--gradiente-primario);
+  color: var(--cor-texto-destaque);
 }
 
 .btn-primary:hover {
-  background: var(--cor-secundaria);
+  background: var(--gradiente-hover);
   transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
 }
 
 /* Cards e containers */
 .card {
-  background: var(--cor-fundo-card);
+  background: var(--gradiente-card);
   border-radius: var(--borda-radius);
   padding: 1.5rem;
   backdrop-filter: blur(10px);
@@ -131,5 +159,6 @@ a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--sombra-suave);
+  box-shadow: var(--sombra-media);
+  border-color: var(--cor-terciaria);
 }

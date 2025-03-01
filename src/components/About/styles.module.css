@@ -38,10 +38,10 @@
 }
 
 .bioContainer {
-  background: rgba(25, 42, 86, 0.4);
+  background: var(--cor-fundo-card);
   padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--cor-primaria);
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--efeito-neon);
 }
 
@@ -59,15 +59,52 @@
 }
 
 .bioHeader span {
-  color: var(--cor-secundaria);
-  font-size: 1.2rem;
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
   letter-spacing: 1px;
+}
+
+.bioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .bioText {
   line-height: 1.8;
   color: var(--cor-texto);
   font-size: 1.1rem;
+}
+
+.interests {
+  margin-top: 1rem;
+}
+
+.interests h4 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.interests ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.interests li {
+  color: var(--cor-texto);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  transition: var(--transicao-padrao);
+}
+
+.interests li:hover {
+  transform: translateY(-2px);
+  background: rgba(37, 99, 235, 0.2);
 }
 
 .skillsContainer {
@@ -165,5 +202,9 @@
   
   .bioHeader h3 {
     font-size: 1.5rem;
+  }
+
+  .interests ul {
+    grid-template-columns: 1fr;
   }
 }

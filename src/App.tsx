@@ -4,6 +4,8 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
+import { Technologies } from './pages/Technologies';
+import { Education } from './pages/Education';
 import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
 
@@ -17,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="/tecnologias" element={<Technologies />} />
+          <Route path="/formacao" element={<Education />} />
           <Route path="/projetos" element={<Projects />} />
           <Route path="/contato" element={<Contact />} />
         </Routes>

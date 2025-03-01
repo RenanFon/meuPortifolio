@@ -1,0 +1,144 @@
+.education {
+  padding: var(--espacamento-padrao);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education h1 {
+  text-align: center;
+  color: var(--cor-primaria);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.mainEducation {
+  margin-bottom: 4rem;
+}
+
+.educationCard {
+  background: var(--cor-fundo-card);
+  border-radius: var(--borda-radius);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.universityLogo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cardHeader h2 {
+  color: var(--cor-primaria);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardHeader p {
+  color: var(--cor-texto-suave);
+}
+
+.description {
+  color: var(--cor-texto);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.highlights, .projects {
+  margin-bottom: 2rem;
+}
+
+.highlights h3, .projects h3 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.highlights ul, .projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding-left: 1.5rem;
+}
+
+.highlights li, .projects li {
+  color: var(--cor-texto);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.highlights li::before, .projects li::before {
+  content: "▹";
+  position: absolute;
+  left: -1rem;
+  color: var(--cor-primaria);
+}
+
+.additionalEducation {
+  margin-top: 4rem;
+}
+
+.additionalEducation h2 {
+  color: var(--cor-primaria);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.courseCard {
+  background: var(--cor-fundo-card);
+  padding: 1.5rem;
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.courseCard h3 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.courseCard ul {
+  list-style: none;
+}
+
+.courseCard li {
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.courseCard li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--cor-primaria);
+}
+
+@media (max-width: 768px) {
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .highlights ul, .projects ul {
+    grid-template-columns: 1fr;
+  }
+}
