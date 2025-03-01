@@ -1,4 +1,5 @@
 import React from 'react';
+import { Database, Code, CloudArrowUp } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 import profilePhoto from '@/assets/images/154706152_2840956502830419_371064825344242994_n.jpg';
 
@@ -15,9 +16,18 @@ export function About() {
             <h3>Renan Antunes Fonseca</h3>
             <span className={styles.role}>Full Stack Developer</span>
             <div className={styles.tags}>
-              <span>Backend</span>
-              <span>Frontend</span>
-              <span>DevOps</span>
+              <span>
+                <Database size={20} weight="duotone" />
+                Backend
+              </span>
+              <span>
+                <Code size={20} weight="duotone" />
+                Frontend
+              </span>
+              <span>
+                <CloudArrowUp size={20} weight="duotone" />
+                DevOps
+              </span>
             </div>
           </div>
         </div>

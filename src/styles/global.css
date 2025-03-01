@@ -1,39 +1,43 @@
 :root {
-  /* Cores principais */
-  --cor-primaria: #2563eb; /* Azul principal */
-  --cor-secundaria: #4f46e5; /* Roxo-azulado */
-  --cor-terciaria: #0ea5e9; /* Azul claro */
-  --cor-destaque: #10b981; /* Verde aqua */
-  --cor-acento: #8b5cf6; /* Roxo */
+  /* Cores principais atualizadas */
+  --cor-primaria: #3b82f6;
+  --cor-secundaria: #60a5fa;
+  --cor-terciaria: #93c5fd;
+  --cor-destaque: #10b981;
+  --cor-acento: #8b5cf6;
   
-  /* Tons de fundo */
-  --cor-fundo: #0a1128;
-  --cor-fundo-secundaria: #0f1835;
-  --cor-fundo-card: rgba(23, 36, 71, 0.7);
-  --cor-fundo-hover: rgba(37, 99, 235, 0.1);
+  /* Tons de fundo mais claros */
+  --cor-fundo: #0f172a;
+  --cor-fundo-secundaria: #1e293b;
+  --cor-fundo-card: rgba(30, 41, 59, 0.8);
+  --cor-fundo-hover: rgba(59, 130, 246, 0.1);
   
   /* Tons de texto */
   --cor-texto: #e2e8f0;
   --cor-texto-suave: #94a3b8;
   --cor-texto-destaque: #ffffff;
   
-  /* Gradientes */
-  --gradiente-primario: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-  --gradiente-hover: linear-gradient(135deg, var(--cor-terciaria), var(--cor-acento));
+  /* Gradientes atualizados */
+  --gradiente-primario: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --gradiente-secundario: linear-gradient(135deg, #60a5fa, #10b981);
+  --gradiente-fundo: radial-gradient(
+    circle at top right,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(139, 92, 246, 0.05) 50%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
   --gradiente-card: linear-gradient(
     170deg,
     rgba(37, 99, 235, 0.1) 0%,
     rgba(79, 70, 229, 0.1) 100%
   );
   
-  /* Efeitos */
-  --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                  0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                  0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --efeito-neon: 0 0 10px var(--cor-primaria),
-                 0 0 20px rgba(37, 99, 235, 0.5);
-  --efeito-neon-texto: 0 0 5px rgba(37, 99, 235, 0.7);
+  /* Efeitos de brilho */
+  --efeito-neon: 0 0 10px rgba(59, 130, 246, 0.5),
+                 0 0 20px rgba(59, 130, 246, 0.3);
+  --efeito-neon-texto: 0 0 5px rgba(59, 130, 246, 0.7);
+  --efeito-neon-hover: 0 0 15px rgba(59, 130, 246, 0.7),
+                       0 0 30px rgba(59, 130, 246, 0.4);
   
   /* Outros */
   --espacamento-padrao: 2rem;
@@ -77,11 +81,22 @@ body {
   font-family: var(--fonte-principal);
   line-height: 1.7;
   color: var(--cor-texto);
-  background-color: var(--cor-fundo);
-  background-image: 
-    radial-gradient(circle at 50% 50%, 
-      var(--cor-fundo-secundaria) 0%, 
-      var(--cor-fundo) 100%);
+  background: var(--cor-fundo);
+  background-image: var(--gradiente-fundo);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('@/assets/images/grid-pattern.png') repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
 }
 
 img {
@@ -149,16 +164,44 @@ a:hover {
 
 /* Cards e containers */
 .card {
-  background: var(--gradiente-card);
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.8),
+    rgba(30, 41, 59, 0.6)
+  );
+  border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: var(--borda-radius);
   padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transicao-padrao);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--efeito-neon);
   transform: translateY(-5px);
-  box-shadow: var(--sombra-media);
-  border-color: var(--cor-terciaria);
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

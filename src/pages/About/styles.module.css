@@ -76,7 +76,13 @@
 }
 
 .bioContainer {
-  background: var(--cor-fundo-card);
+  background: linear-gradient(
+    170deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(30, 41, 59, 0.7)
+  );
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border-radius: var(--borda-radius);
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -116,6 +122,22 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.bioContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--cor-primaria),
+    transparent
+  );
+  opacity: 0.3;
 }
 
 .bioText {
@@ -337,7 +359,15 @@
   align-items: center;
   gap: 2.5rem;
   margin-bottom: 3rem;
-  background: var(--cor-fundo-card);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(30, 41, 59, 0.7)
+  );
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: var(--efeito-neon);
+  backdrop-filter: blur(10px);
+  animation: float 6s ease-in-out infinite;
   padding: 2rem;
   border-radius: var(--borda-radius);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -352,6 +382,16 @@
   box-shadow: var(--efeito-neon);
   overflow: hidden;
   position: relative;
+}
+
+.profileImage::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--gradiente-primario);
+  animation: gradient-shift 3s linear infinite;
+  z-index: -1;
 }
 
 .profileImage img {
@@ -386,24 +426,44 @@
 
 .tags {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .tags span {
-  background: var(--cor-fundo-hover);
-  color: var(--cor-texto);
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  font-size: 1rem;
   border: 1px solid var(--cor-primaria);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
   transition: all 0.3s ease;
+  min-width: 130px;
+  justify-content: center;
+}
+
+.tags span svg {
+  color: var(--cor-primaria);
+  transition: var(--transicao-padrao);
+  font-size: 1.2rem;
 }
 
 .tags span:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-fundo);
+  background: var(--gradiente-primario);
   transform: translateY(-2px);
+  box-shadow: var(--efeito-neon);
+}
+
+.tags span:hover svg {
+  color: var(--cor-texto);
+  transform: scale(1.1);
 }
 
 .highlights {
@@ -426,19 +486,22 @@
 }
 
 .highlights li {
-  background: var(--cor-fundo-hover);
+  background: rgba(59, 130, 246, 0.1);
   padding: 0.75rem 1rem;
   border-radius: var(--borda-radius);
   color: var(--cor-texto);
   text-align: center;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  transition: var(--transicao-padrao);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .highlights li:hover {
-  transform: translateY(-2px);
-  background: rgba(37, 99, 235, 0.2);
-  border-color: var(--cor-primaria);
+  transform: translateY(-3px) scale(1.02);
+  background: var(--gradiente-secundario);
+  border-color: var(--cor-secundaria);
+  box-shadow: var(--efeito-neon-hover);
+  color: var(--cor-fundo);
 }
 
 @media (max-width: 768px) {
@@ -504,6 +567,12 @@
   .tags {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .tags span {
+    padding: 0.6rem 1rem;
+    min-width: auto;
+    font-size: 0.9rem;
   }
 
   .highlights ul {
