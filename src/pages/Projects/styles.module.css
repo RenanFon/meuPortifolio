@@ -1,0 +1,30 @@
+.projects {
+  padding: var(--espacamento-padrao);
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectsGrid {
+  margin-top: 2rem;
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+  box-shadow: var(--efeito-neon);
+}
+
+.githubLink:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--efeito-neon), 0 10px 20px rgba(0,0,0,0.2);
+}

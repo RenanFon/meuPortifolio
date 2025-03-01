@@ -1,0 +1,173 @@
+.about {
+  padding: var(--espacamento-padrao);
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ...rest of the styles from previous About component... */
+
+.bioContainer, .experienceContainer, .skillsContainer {
+  background: var(--cor-fundo-card);
+  border-radius: var(--borda-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transicao-padrao);
+}
+
+.bioHeader {
+  margin-bottom: 1.5rem;
+}
+
+.bioHeader h2 {
+  font-size: 2rem;
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+}
+
+.bioHeader span {
+  color: var(--cor-terciaria);
+  font-size: 1.1rem;
+}
+
+.experienceContainer {
+  background: rgba(25, 42, 86, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--cor-primaria);
+  box-shadow: var(--efeito-neon);
+}
+
+.experienceContainer h3 {
+  color: var(--cor-primaria);
+  text-shadow: var(--efeito-neon-texto);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.jobCard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--borda-radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.jobHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cor-primaria);
+}
+
+.jobHeader h4 {
+  color: var(--cor-primaria);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.jobHeader span {
+  color: var(--cor-secundaria);
+  font-size: 0.9rem;
+}
+
+.jobDescription {
+  color: var(--cor-texto);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.achievements h5 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.achievements ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.achievements li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.achievements li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--cor-secundaria);
+}
+
+.achievements strong {
+  color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+.skillGroups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.skillsList li {
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: var(--borda-radius);
+  text-align: center;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  transition: var(--transicao-padrao);
+}
+
+.skillsList li:hover {
+  background: rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.techStack {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 168, 255, 0.2);
+}
+
+.techStack h5 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.techStack ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.techStack li {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.techStack li:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--efeito-neon);
+}
+
+/* ...existing media queries... */

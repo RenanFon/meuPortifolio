@@ -20,28 +20,36 @@
 .contactCard {
   text-align: center;
   padding: 2rem;
-  background: white;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid var(--cor-primaria);
+  box-shadow: var(--efeito-neon);
+  backdrop-filter: blur(10px);
   transition: transform 0.3s;
 }
 
 .contactCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px var(--cor-primaria);
 }
 
 .contactCard img {
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 5px var(--cor-primaria));
 }
 
 .contactCard h3 {
-  color: var(--cor-secundaria);
+  color: var(--cor-primaria);
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: var(--efeito-neon-texto);
 }
 
 .contactCard a, .contactCard address {
   color: var(--cor-texto);
   text-decoration: none;
+  text-shadow: var(--efeito-neon-texto);
 }
 
 .contactCard a:hover {
