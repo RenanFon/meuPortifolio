@@ -303,3 +303,84 @@
     font-size: 0.75rem;
   }
 }
+
+.menuButton {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--cor-texto);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 100;
+  transition: var(--transicao-padrao);
+}
+
+.menuButton:hover {
+  color: var(--cor-primaria);
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: var(--cor-fundo-secundaria);
+    backdrop-filter: blur(10px);
+    padding: 5rem 2rem;
+    transition: right 0.3s ease;
+    border-left: 1px solid rgba(59, 130, 246, 0.2);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .logoContainer {
+    transform: scale(0.8);
+  }
+}
+
+/* Animation for menu items */
+.nav.active li {
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+.nav.active li:nth-child(1) { animation-delay: 0.1s; }
+.nav.active li:nth-child(2) { animation-delay: 0.2s; }
+.nav.active li:nth-child(3) { animation-delay: 0.3s; }
+.nav.active li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

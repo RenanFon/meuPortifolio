@@ -1,13 +1,22 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { 
   User, 
   Code, 
   GraduationCap, 
-  EnvelopeSimple 
+  EnvelopeSimple,
+  List,
+  X
 } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -22,28 +31,41 @@ export function Header() {
           </div>
         </Link>
       </div>
-      <nav className={styles.nav}>
+
+      <button 
+        className={styles.menuButton} 
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        {isMenuOpen ? (
+          <X size={24} weight="bold" />
+        ) : (
+          <List size={24} weight="bold" />
+        )}
+      </button>
+
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
         <ul>
           <li>
-            <NavLink to="/sobre">
+            <NavLink to="/sobre" onClick={() => setIsMenuOpen(false)}>
               <User size={20} />
               <span>Sobre</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tecnologias">
+            <NavLink to="/tecnologias" onClick={() => setIsMenuOpen(false)}>
               <Code size={20} />
               <span>Tecnologias</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/formacao">
+            <NavLink to="/formacao" onClick={() => setIsMenuOpen(false)}>
               <GraduationCap size={20} />
               <span>Formação</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contato">
+            <NavLink to="/contato" onClick={() => setIsMenuOpen(false)}>
               <EnvelopeSimple size={20} />
               <span>Contato</span>
             </NavLink>
