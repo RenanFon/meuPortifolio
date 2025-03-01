@@ -1,10 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { 
   User, 
   Code, 
   GraduationCap, 
-  FolderSimple, 
   EnvelopeSimple 
 } from '@phosphor-icons/react';
 import styles from './styles.module.css';
@@ -27,34 +25,28 @@ export function Header() {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link to="/sobre">
-              <User weight="duotone" size={20} />
+            <NavLink to="/sobre">
+              <User size={20} />
               <span>Sobre</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/tecnologias">
-              <Code weight="duotone" size={20} />
+            <NavLink to="/tecnologias">
+              <Code size={20} />
               <span>Tecnologias</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/formacao">
-              <GraduationCap weight="duotone" size={20} />
+            <NavLink to="/formacao">
+              <GraduationCap size={20} />
               <span>Formação</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/projetos">
-              <FolderSimple weight="duotone" size={20} />
-              <span>Projetos</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contato">
-              <EnvelopeSimple weight="duotone" size={20} />
+            <NavLink to="/contato">
+              <EnvelopeSimple size={20} />
               <span>Contato</span>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -1,14 +1,64 @@
 .education {
   padding: var(--espacamento-padrao);
+  min-height: calc(100vh - 80px);
+  background: var(--cor-fundo-secundaria);
+  position: relative;
   max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradiente-fundo);
+  pointer-events: none;
+}
+
+.education::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 15s linear infinite;
+  pointer-events: none;
+}
+
+.educationContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.education h1 {
+.sectionTitle {
   text-align: center;
-  color: var(--cor-primaria);
-  font-size: 2.5rem;
   margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--cor-primaria);
+  border-radius: 2px;
 }
 
 .mainEducation {
@@ -16,10 +66,29 @@
 }
 
 .educationCard {
-  background: var(--cor-fundo-card);
-  border-radius: var(--borda-radius);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(30, 41, 59, 0.7)
+  );
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: var(--efeito-neon);
+  backdrop-filter: blur(10px);
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--borda-radius);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.educationCard::before {
+  content: '<Education>';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
 }
 
 .cardHeader {
@@ -29,6 +98,19 @@
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.educationHeader {
+  border-bottom: 1px solid var(--cor-primaria);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.educationHeader h3 {
+  font-size: 1.8rem;
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+  text-shadow: var(--efeito-neon-texto);
 }
 
 .universityLogo {
@@ -47,10 +129,38 @@
   color: var(--cor-texto-suave);
 }
 
+.period {
+  display: inline-block;
+  background: var(--gradiente-primario);
+  color: var(--cor-texto);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.institution {
+  color: var(--cor-texto-suave);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .description {
   color: var(--cor-texto);
   line-height: 1.8;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.description::before {
+  content: '>';
+  position: absolute;
+  left: -20px;
+  color: var(--cor-primaria);
+  opacity: 0.5;
+  animation: blink 1s infinite;
 }
 
 .highlights, .projects {
@@ -81,6 +191,59 @@
   position: absolute;
   left: -1rem;
   color: var(--cor-primaria);
+}
+
+.skillsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skillItem {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: var(--borda-radius);
+  color: var(--cor-texto);
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: var(--transicao-padrao);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillItem:hover {
+  transform: var(--hover-transform);
+  background: var(--hover-gradient);
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
+}
+
+.skillItem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.skillItem:hover::after {
+  left: 100%;
+}
+
+.educationCard:hover {
+  transform: var(--hover-transform);
+  background: var(--hover-gradient);
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
 }
 
 .additionalEducation {
@@ -131,6 +294,16 @@
   color: var(--cor-primaria);
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0; }
+}
+
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
+}
+
 @media (max-width: 768px) {
   .cardHeader {
     flex-direction: column;
@@ -139,6 +312,22 @@
   }
 
   .highlights ul, .projects ul {
+    grid-template-columns: 1fr;
+  }
+
+  .educationCard {
+    padding: 1.5rem;
+  }
+
+  .educationHeader h3 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .skillsList {
     grid-template-columns: 1fr;
   }
 }

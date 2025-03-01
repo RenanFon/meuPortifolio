@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Database, Code, CloudArrowUp } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 import profilePhoto from '@/assets/images/154706152_2840956502830419_371064825344242994_n.jpg';
 
 export function About() {
+  const navigate = useNavigate();
+
+  const handleNavigateToTech = (section: string) => {
+    navigate(`/tecnologias#${section}`);
+  };
+
   return (
     <section className={styles.aboutSection}>
       <h2 className={styles.sectionTitle}>Sobre mim</h2>
@@ -16,15 +23,15 @@ export function About() {
             <h3>Renan Antunes Fonseca</h3>
             <span className={styles.role}>Full Stack Developer</span>
             <div className={styles.tags}>
-              <span>
+              <span onClick={() => handleNavigateToTech('backend')} role="button" tabIndex={0}>
                 <Database size={20} weight="duotone" />
                 Backend
               </span>
-              <span>
+              <span onClick={() => handleNavigateToTech('frontend')} role="button" tabIndex={0}>
                 <Code size={20} weight="duotone" />
                 Frontend
               </span>
-              <span>
+              <span onClick={() => handleNavigateToTech('devops')} role="button" tabIndex={0}>
                 <CloudArrowUp size={20} weight="duotone" />
                 DevOps
               </span>

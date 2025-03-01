@@ -6,4 +6,205 @@
   align-items: center;
 }
 
-/* ...rest of the styles from previous Contact component... */
+.contactSection {
+  padding: var(--espacamento-padrao);
+  min-height: calc(100vh - 80px);
+  background: var(--cor-fundo-secundaria);
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradiente-fundo);
+  pointer-events: none;
+}
+
+.contactSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 15s linear infinite;
+  pointer-events: none;
+}
+
+.contactContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--cor-primaria);
+  border-radius: 2px;
+}
+
+.contactCard {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(30, 41, 59, 0.7)
+  );
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: var(--efeito-neon);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: var(--borda-radius);
+  position: relative;
+}
+
+.contactCard::before {
+  content: '<Contact>';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
+}
+
+.contactCard h3 {
+  font-size: 2rem;
+  color: var(--cor-texto);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contactCard p {
+  color: var(--cor-texto-suave);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contactGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: var(--transicao-padrao);
+}
+
+.contactItem:hover {
+  transform: var(--hover-transform);
+  background: var(--hover-gradient);
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
+}
+
+.iconWrapper {
+  color: var(--cor-primaria);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--cor-primaria);
+  box-shadow: var(--efeito-neon);
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover .iconWrapper {
+  transform: rotate(360deg);
+  background: var(--cor-primaria);
+  color: var(--cor-texto);
+}
+
+.contactInfo {
+  flex: 1;
+}
+
+.contactInfo h4 {
+  color: var(--cor-texto);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contactInfo a,
+.contactInfo span {
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: var(--cor-primaria);
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--borda-radius);
+  transition: all 0.3s ease;
+}
+
+.copyButton:hover {
+  color: var(--cor-primaria);
+  background: var(--hover-gradient);
+}
+
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
+}
+
+@media (max-width: 768px) {
+  .contactCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .contactItem {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .contactInfo h4 {
+    font-size: 1rem;
+  }
+
+  .contactInfo a,
+  .contactInfo span {
+    font-size: 0.9rem;
+  }
+}

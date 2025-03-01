@@ -15,6 +15,7 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .aboutSection::before {
@@ -25,6 +26,21 @@
   right: 0;
   bottom: 0;
   background: var(--gradiente-fundo);
+  pointer-events: none;
+}
+
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 15s linear infinite;
   pointer-events: none;
 }
 
@@ -80,6 +96,21 @@
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--sombra-suave);
+  position: relative;
+}
+
+.bioContainer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradiente-primario);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.3;
+  animation: borderPulse 3s ease-in-out infinite;
 }
 
 .bioHeader {
@@ -138,6 +169,17 @@
   line-height: 1.8;
   font-size: 1.1rem;
   letter-spacing: 0.2px;
+  position: relative;
+  z-index: 1;
+}
+
+.bioText::before {
+  content: '>';
+  position: absolute;
+  left: -20px;
+  color: var(--cor-primaria);
+  opacity: 0.5;
+  animation: blink 1s infinite;
 }
 
 .experienceContainer {
@@ -364,6 +406,28 @@
   padding: 2rem;
   border-radius: var(--borda-radius);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.profileSection::before {
+  content: '<Profile>';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
+}
+
+.profileSection::after {
+  content: '</Profile>';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
 }
 
 .profileImage {
@@ -374,28 +438,12 @@
   border: 3px solid var(--cor-primaria);
   box-shadow: var(--efeito-neon);
   overflow: hidden;
-  position: relative;
-}
-
-.profileImage::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: var(--gradiente-primario);
-  animation: gradient-shift 3s linear infinite;
-  z-index: -1;
 }
 
 .profileImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.profileImage:hover img {
-  transform: scale(1.1);
 }
 
 .profileInfo {
@@ -421,9 +469,12 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  position: relative;
+  padding: 0.5rem 0; /* Adicionado padding para evitar corte */
 }
 
 .tags span {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -440,6 +491,21 @@
   transition: all 0.3s ease;
   min-width: 130px;
   justify-content: center;
+  position: relative;
+  transform-origin: center; /* Garante que a transformação seja a partir do centro */
+}
+
+.tags span:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+.tags span:hover {
+  transform: var(--hover-transform);
+  background: var(--hover-gradient);
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
+  color: var(--cor-texto-destaque);
 }
 
 .tags span svg {
@@ -448,15 +514,25 @@
   font-size: 1.2rem;
 }
 
-.tags span:hover {
-  background: var(--gradiente-primario);
-  transform: translateY(-2px);
-  box-shadow: var(--efeito-neon);
-}
-
 .tags span:hover svg {
   color: var(--cor-texto);
   transform: scale(1.1);
+}
+
+.tags span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--cor-primaria);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tags span:hover::after {
+  transform: scaleX(1);
 }
 
 .highlights {
@@ -487,14 +563,89 @@
   border: 1px solid rgba(59, 130, 246, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .highlights li:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: var(--gradiente-secundario);
-  border-color: var(--cor-secundaria);
-  box-shadow: var(--efeito-neon-hover);
+  transform: var(--hover-transform);
+  background: var(--hover-gradient);
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
   color: var(--cor-fundo);
+}
+
+.highlights li::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+.highlights li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.highlights li:hover::after {
+  left: 100%;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {

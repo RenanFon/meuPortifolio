@@ -2,81 +2,93 @@ import React from 'react';
 import styles from './styles.module.css';
 
 export function Education() {
+  const mainEducation = {
+    course: "Análise e Desenvolvimento de Sistemas",
+    institution: "UNICESUMAR",
+    period: "2021 - 2023",
+    description: "Formação focada em desenvolvimento de software, com ênfase em programação, banco de dados e engenharia de software.",
+    skills: [
+      "Programação Orientada a Objetos",
+      "Banco de Dados",
+      "Engenharia de Software",
+      "Desenvolvimento Web",
+      "Análise de Sistemas"
+    ]
+  };
+
+  const additionalFormations = [
+    {
+      title: "Formação Engenharia de Software",
+      institution: "Alura",
+      period: "2022",
+      skills: [
+        "Design de Software",
+        "Padrões de Design",
+        "Metodologias Ágeis",
+        "Testes de Software"
+      ]
+    },
+    {
+      title: "Formação Business Agility",
+      institution: "Alura",
+      period: "2022",
+      skills: [
+        "Metodologias Ágeis",
+        "Gestão de Projetos",
+        "Scrum",
+        "Kanban"
+      ]
+    },
+    {
+      title: "Formação Comunicação",
+      institution: "Alura",
+      period: "2023",
+      skills: [
+        "Comunicação Interpessoal",
+        "Apresentações",
+        "Trabalho em Equipe"
+      ]
+    }
+  ];
+
   return (
     <section className={styles.education}>
-      <h1>Formação Acadêmica</h1>
-
-      <div className={styles.mainEducation}>
-        <div className={styles.educationCard}>
-          <div className={styles.cardHeader}>
-            <img src="/icons/unicesumar-logo.png" alt="Logo UniCesumar" className={styles.universityLogo} />
-            <div>
-              <h2>Análise e Desenvolvimento de Sistemas</h2>
-              <p>UniCesumar • 2021 - 2023</p>
+      <h2 className={styles.sectionTitle}>Formação</h2>
+      <div className={styles.educationContent}>
+        <div className={styles.mainEducation}>
+          <div className={styles.educationCard}>
+            {/* Principal formação */}
+            <div className={styles.educationHeader}>
+              <h3>{mainEducation.course}</h3>
+              <span className={styles.period}>{mainEducation.period}</span>
+              <span className={styles.institution}>{mainEducation.institution}</span>
             </div>
-          </div>
-
-          <div className={styles.cardContent}>
-            <p className={styles.description}>
-              Formação tecnológica voltada ao desenvolvimento de soluções computacionais e análise de sistemas.
-              O curso capacita profissionais para analisar, projetar, documentar, especificar, testar, implantar
-              e manter sistemas de informação.
-            </p>
-
-            <div className={styles.highlights}>
-              <h3>Principais Conhecimentos:</h3>
-              <ul>
-                <li>Desenvolvimento de Software</li>
-                <li>Análise e Modelagem de Sistemas</li>
-                <li>Banco de Dados</li>
-                <li>Engenharia de Software</li>
-                <li>Programação Orientada a Objetos</li>
-                <li>Arquitetura de Software</li>
-              </ul>
-            </div>
-
-            <div className={styles.projects}>
-              <h3>Projetos Desenvolvidos:</h3>
-              <ul>
-                <li>Sistema de Gerenciamento de Projetos</li>
-                <li>Aplicações Web com tecnologias modernas</li>
-                <li>Integrações de APIs e Microsserviços</li>
-                <li>Desenvolvimento de Sistemas Distribuídos</li>
-              </ul>
+            <p className={styles.description}>{mainEducation.description}</p>
+            <div className={styles.skillsList}>
+              {mainEducation.skills.map((skill, index) => (
+                <div key={index} className={styles.skillItem}>
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.additionalEducation}>
-        <h2>Formação Complementar</h2>
-        <div className={styles.courseGrid}>
-          {/* Cursos e Certificações */}
-          <div className={styles.courseCard}>
-            <h3>Desenvolvimento Web</h3>
-            <ul>
-              <li>HTML5 e CSS3 (46h)</li>
-              <li>JavaScript Avançado (49h)</li>
-              <li>React JS (30h)</li>
-            </ul>
-          </div>
-
-          <div className={styles.courseCard}>
-            <h3>Back-end</h3>
-            <ul>
-              <li>Banco de Dados SQL e NoSQL (52h)</li>
-              <li>Node.js (22h)</li>
-              <li>Delphi Avançado (40h)</li>
-            </ul>
-          </div>
-
-          <div className={styles.courseCard}>
-            <h3>DevOps & Ferramentas</h3>
-            <ul>
-              <li>Git e GitHub (12h)</li>
-              <li>Testes Unitários (20h)</li>
-              <li>SCRUM (2h)</li>
-            </ul>
+        <div className={styles.additionalEducation}>
+          <h2>Formações Complementares</h2>
+          <div className={styles.courseGrid}>
+            {additionalFormations.map((formation, index) => (
+              <div key={index} className={styles.educationCard}>
+                <h3>{formation.title}</h3>
+                <p className={styles.period}>{formation.period}</p>
+                <p className={styles.institution}>{formation.institution}</p>
+                <ul>
+                  {formation.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

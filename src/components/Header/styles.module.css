@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem var(--espacamento-padrao);
-  background: rgba(10, 17, 40, 0.95);
+  padding: 1rem var(--espacamento-padrao);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--cor-primaria);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
   box-shadow: 0 4px 30px rgba(37, 99, 235, 0.1);
   min-height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo h1 {
@@ -20,6 +23,14 @@
 .logo span {
   color: var(--cor-secundaria);
   animation: glitch 2s infinite;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .nav ul {
@@ -55,12 +66,14 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1rem;
   border: 1px solid transparent;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  border-radius: var(--borda-radius);
+  transition: var(--transicao-padrao);
 }
 
 .nav a svg {
@@ -92,11 +105,15 @@
 }
 
 .nav a:hover {
-  color: var(--cor-terciaria);
-  text-shadow: 0 0 8px var(--cor-terciaria);
-  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.nav a.active {
+  color: var(--cor-primaria);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--cor-primaria);
   box-shadow: var(--efeito-neon);
-  text-shadow: var(--efeito-neon-texto);
 }
 
 .logoContainer {
