@@ -1,140 +1,137 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portifólio</title>
+    <meta name="description" content="Portfólio de Renan Fonseca - Desenvolvedor Web e Back-end">
+    <title>Renan Fonseca | Portfólio</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/responsivo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagens/icones/icons8-my-computer-50.png" type="image/x-icon">
-
-    
-
 </head>
 <body>
-    <header>
-        <h1>Renan <br><span>Fonseca</span></h1>
-        <nav class="menu js-menu" id="js-menu">
+    <header class="main-header">
+        <div class="logo">
+            <h1>Renan <span>Fonseca</span></h1>
+        </div>
+        <nav class="main-nav" aria-label="Navegação principal">
             <ul>
-                <li><a href="#sobre"> Sobre</a></li>
-                <li><a href="#contato"> Contato</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#formacao">Formaçoes</a></li>
+                <li><a href="#sobre" aria-label="Ir para seção Sobre">Sobre</a></li>
+                <li><a href="#contato" aria-label="Ir para seção Contato">Contato</a></li>
+                <li><a href="#projetos" aria-label="Ir para seção Projetos">Projetos</a></li>
+                <li><a href="#formacao" aria-label="Ir para seção Formação">Formação</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <div class="principal">
+        <section class="hero">
             <div class="apresentacao">
                 <h2>Desenvolvimento <span>Web e Back-end</span></h2>
-                <p>Olá, tenho 21 anos e atualmente estou cursando <span class="corazul">Analise e Desenvolvimento de Sistemas </span>, módulo 5/5. <br><br>
-                -Sou uma pessoa focada e com foco em cumprir os objetivos.</p>
+                <p>Olá! Sou desenvolvedor web com foco em soluções front-end e back-end. Atualmente estou cursando o último módulo de 
+                   <span class="destaque">Análise e Desenvolvimento de Sistemas</span>.</p>
+                <p>Busco constantemente aprimorar minhas habilidades e entregar resultados de qualidade.</p>
             </div>
-            <div class="soueu">
-                <img src="imagens/fotos/fundo2.png" alt="">
+            <div class="profile-image">
+                <img src="imagens/fotos/fundo2.png" alt="Foto de Renan Fonseca" width="300" height="300">
             </div>
+        </section>
 
-
-        </div>
-
-        <div class="redes">
+        <section class="social-links" aria-label="Redes sociais">
             <ul>
-                <li><a href="https://www.facebook.com/renan.fonseca.7927" target="_blank" ><img src="imagens/icones/icons8-facebook-24.png" alt=""></a></li>
-                <li><a href="https://www.linkedin.com/in/renanantunesfonseca/" target="_blank"><img src="imagens/icones/icons8-linkedin-24.png" alt=""></a></li>
-                <li><a href="https://www.instagram.com/renan_fonseca_64/" target="_blank"><img src="imagens/icones/icons8-instagram-24.png" alt=""></a></li>
+                <li><a href="https://www.facebook.com/renan.fonseca.7927" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="imagens/icones/icons8-facebook-24.png" alt="Ícone Facebook"></a></li>
+                <li><a href="https://www.linkedin.com/in/renanantunesfonseca/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="imagens/icones/icons8-linkedin-24.png" alt="Ícone LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/renan_fonseca_64/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="imagens/icones/icons8-instagram-24.png" alt="Ícone Instagram"></a></li>
             </ul>
-        </div>
-
-        <section class="contato container js-scroll" id="contato">
-           <div class="item">
-            <img src="imagens/icones/icons8-whatsapp-24.png" alt="">
-            <h2>Whatsapp</h2>
-            <h4>(42)99121-7290</h4>
-           </div>
-           <div class="item">
-            <img src="imagens/icones/icons8-gmail-login-24.png" alt="">
-            <h2>E-mail</h2>
-            <h4>renanfonseca88@gmail.com</h4>
-           </div>
-           <div class="item"> 
-               <img src="imagens/icones/icons8-location-24.png" alt="">
-            <h2>Localidade</h2>
-            <h4>Imbituva-PR</h4>
-           </div>
         </section>
 
-        <section class="formacao js-accordion js-scroll" id="formacao">
-            <div class="form">
-                <h2 class="corazul">-Formação academica <img src="imagens/icones/icons8-mortarboard-24.png" class="item1" alt=""> </h2>
-                <p>Cursando Analise e desenvolvimento de Sistemas<br><br>5/5</p>
-            </div>
-            <div class="form">
-                <h2 class="corazul">-Escolaridade <img src="imagens/icones/icons8-mortarboard-24.png" alt="" class="item2"></h2>
-                <p>Formado no ensino médio:<br><br>-Colegio Estadual Santo Antonio ,2019
-                <br><br>Formado no ensino Fundamental:<br><br>-Colegio Estadual Alcides Munhoz ,2016</p>
-            </div>
-            <div class="form">
-                <h2 class="corazul">-Cursos e Especializaçoes <img src="imagens/icones/icons8-mortarboard-24.png " class="item3" alt=""></h2>
-                <p>
-                
-
-                -Algoritmos e Lógica de Programação (33 horas)<br><br>
-                -Bancos de Dados SQL e NoSQL do básico ao avançado (52 horas)<br><br>
-                -Git e GitHub essencial para o Desenvolvedor (12 horas)<br><br>
-                -HTML e CSS para Iniciantes (46 horas)<br><br>
-                -Introdução a criação de
-                websites com HTML5 e CSS3 (6 horas)<br><br>
-                - Curso Web Design Completo: HTML5, CSS3 e JS + 5 Projetos (54 horas)<br><br>
-                -Programação em JavaScript do básico ao avançado (27 horas)<br><br>
-                -JavaScript do básico ao avançado(c/node.js e projetos) (22 horas)<br><br>
-                -CSS Flexbox(6 horas)<br><br>
-                -CSS Grid Layout (10 horas)<br><br>
-                -Curso de Ingles Domine o vocabulário (15 horas)<br><br>
-                -Pacote Office 2019 - Do básico ao avançado com VBA (11 horas)<br><br>
-                -Projetos ágeis com SCRUM (2 horas)<br><br>
-                -Inter Frontend Developer (99 horas)
-
-
-
-                </p>
-
-            </div>
-
-        </section>
-        <section class="sobre js-scroll" id="sobre">
-            <div class="minhabio">
-                <p>Sobre mim :</p>
-                <h2 class="corazul">Renan Antunes Fonseca</h2>
-                <p>
-                    Olá, bem vindo ao meu perfil, me chamo Renan Fonseca ,tenho 21 anos e atualmente estou cursando Analise e Desenvolvimento de Sistemas , módulo 5/5.
-                    Sou uma pessoa focada e procuro sempre me dedicar ao máximo, sempre disposto a evoluir e aprender mais a cada dia com as pessoas ao meu redor.
-                    Possuo Habilidades com as Tecnologias:<br><br>
-                    <span class="corazul">-HTML5</span><br>
-                    -CSS3<br>
-                    <span class="corazul">-JavaScript</span>
-                    <br>-SQL<br>
-                    <span class="corazul">-Delphi</span><br>
-                    <span>-Git.</span><br>
-                </p>
-            </div>
-            <div class="euaqui">
-                <img src="imagens/fotos/154706152_2840956502830419_371064825344242994_n.jpg" alt="">
-
+        <section id="contato" class="contact-section container js-scroll">
+            <h2 class="section-title">Contato</h2>
+            <div class="contact-grid">
+                <article class="contact-card">
+                    <img src="imagens/icones/icons8-whatsapp-24.png" alt="Ícone WhatsApp">
+                    <h3>WhatsApp</h3>
+                    <a href="tel:+5542991217290">(42) 99121-7290</a>
+                </article>
+                <article class="contact-card">
+                    <img src="imagens/icones/icons8-gmail-login-24.png" alt="Ícone Email">
+                    <h3>E-mail</h3>
+                    <a href="mailto:renanfonseca88@gmail.com">renanfonseca88@gmail.com</a>
+                </article>
+                <article class="contact-card">
+                    <img src="imagens/icones/icons8-location-24.png" alt="Ícone Localização">
+                    <h3>Localização</h3>
+                    <address>Imbituva-PR</address>
+                </article>
             </div>
         </section>
-        <h3 class="meusprojetos">meus Projetos</h3>
-        <section id="projetos">
-            <a href="https://github.com/RenanFon" target="_blank"><img src="imagens/icones/icons8-github-24.png" alt=""></a>
+
+        <section id="formacao" class="education-section js-accordion js-scroll">
+            <h2 class="section-title">Formação</h2>
+            <div class="education-grid">
+                <article class="education-card">
+                    <h3 class="destaque">Formação Acadêmica</h3>
+                    <p>Análise e Desenvolvimento de Sistemas</p>
+                    <p>Último módulo (5/5)</p>
+                </article>
+
+                <article class="education-card">
+                    <h3 class="destaque">Certificações e Cursos</h3>
+                    <ul class="courses-list">
+                        <li>Algoritmos e Lógica de Programação (33h)</li>
+                        <li>Bancos de Dados SQL e NoSQL (52h)</li>
+                        <li>Git e GitHub (12h)</li>
+                        <li>HTML5 e CSS3 (46h)</li>
+                        <li>JavaScript Avançado (49h)</li>
+                        <!-- ...outros cursos... -->
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="sobre" class="about-section js-scroll">
+            <h2 class="section-title">Sobre mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Desenvolvedor web focado em criar soluções eficientes e escaláveis. Possuo experiência com:</p>
+                    <ul class="skills-list">
+                        <li>HTML5 e CSS3</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>Delphi</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="imagens/fotos/154706152_2840956502830419_371064825344242994_n.jpg" 
+                         alt="Foto profissional de Renan Fonseca"
+                         width="300" 
+                         height="300">
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projects-section">
+            <h2 class="section-title">Projetos</h2>
+            <a href="https://github.com/RenanFon" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="github-link"
+               aria-label="Ver projetos no GitHub">
+                <img src="imagens/icones/icons8-github-24.png" alt="Ícone GitHub">
+                <span>Ver projetos no GitHub</span>
+            </a>
         </section>
     </main>
-    <footer>
-        <p>Desenvolvido por @Renan Fonseca</p>
-        
+
+    <footer class="main-footer">
+        <p>&copy; 2023 Renan Fonseca. Todos os direitos reservados.</p>
     </footer>
+
     <script src="javaScript/script.js"></script>
 </body>
 </html>
