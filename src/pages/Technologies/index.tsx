@@ -164,34 +164,38 @@ export function Technologies() {
             <div className={styles.techList}>
               {section.technologies.map((tech) => (
                 <div key={tech.name} className={styles.techCard}>
-                  <div className={styles.techInfo}>
-                    <div className={styles.techHeader}>
+                  <div className={styles.techHeader}>
+                    <div className={styles.techName}>
                       <span className={styles.techIcon}>{tech.icon}</span>
                       <h4>{tech.name}</h4>
                     </div>
-                    <p>{tech.description}</p>
-                    <div className={styles.coursesList}>
-                      <h5>
-                        <GraduationCap size={20} weight="duotone" />
-                        Certificações e Cursos
-                      </h5>
-                      <ul>
-                        {tech.courses.map((course, index) => (
-                          <li key={index}>
-                            <a 
-                              href={course.certificateUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className={styles.courseLink}
-                            >
-                              {course.name}
-                              <span>({course.institution})</span>
-                              <ArrowSquareOut size={16} />
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  </div>
+
+                  <p className={styles.techDescription}>
+                    {tech.description}
+                  </p>
+
+                  <div className={styles.coursesList}>
+                    <h5>
+                      <GraduationCap size={24} weight="duotone" />
+                      Certificações e Cursos
+                    </h5>
+                    
+                    {tech.courses.map((course, index) => (
+                      <a
+                        key={index}
+                        href={course.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.courseLink}
+                      >
+                        <span className={styles.courseName}>{course.name}</span>
+                        <span className={styles.courseInstitution}>
+                          {course.institution}
+                        </span>
+                        <ArrowSquareOut size={20} />
+                      </a>
+                    ))}
                   </div>
                 </div>
               ))}

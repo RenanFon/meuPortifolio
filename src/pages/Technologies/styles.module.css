@@ -139,6 +139,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .techCard::before {
@@ -192,6 +193,9 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  margin-bottom: 1.5rem;
 }
 
 .techHeader h4 {
@@ -222,8 +226,30 @@
   margin: 1rem 0;
 }
 
+.techName {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.techName h4 {
+  font-size: 1.8rem;
+  color: var(--cor-texto);
+}
+
+.techDescription {
+  color: var(--cor-texto-suave);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: var(--borda-radius);
+  border-left: 3px solid var(--cor-primaria);
+}
+
 .coursesList {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(59, 130, 246, 0.2);
 }
@@ -235,6 +261,14 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--cor-secundaria);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .coursesList ul {
@@ -252,6 +286,14 @@
   background: rgba(59, 130, 246, 0.05);
   border-radius: var(--borda-radius);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: var(--borda-radius);
+  transition: var(--transicao-padrao);
 }
 
 .courseLink:hover {
@@ -259,6 +301,9 @@
   border-color: var(--hover-border);
   transform: translateX(5px);
   color: var(--cor-texto-destaque);
+  transform: translateX(10px);
+  background: rgba(37, 99, 235, 0.1);
+  border-left: 3px solid var(--cor-primaria);
 }
 
 .courseLink svg {
@@ -275,6 +320,19 @@
   color: var(--cor-texto-suave);
   font-size: 0.9rem;
   margin-left: auto;
+}
+
+.courseName {
+  flex: 1;
+  font-weight: 500;
+}
+
+.courseInstitution {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(59, 130, 246, 0.2);
 }
 
 @keyframes gridMove {

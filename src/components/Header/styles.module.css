@@ -26,18 +26,23 @@
 }
 
 .nav {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  gap: 2rem;
-  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav.active {
+  right: 0;
+  transform: translateX(0);
 }
 
 .nav ul {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.5rem;
   list-style: none;
+  align-items: center;
   position: relative;
+  flex-direction: column;
 }
 
 .nav li:not(:last-child)::after {
@@ -58,9 +63,9 @@
 }
 
 .nav a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   text-decoration: none;
   color: var(--cor-texto);
   font-weight: 500;
@@ -71,15 +76,21 @@
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   border-radius: var(--borda-radius);
   transition: var(--transicao-padrao);
+  width: auto;
+  justify-content: flex-start;
+  white-space: nowrap;
 }
 
 .nav a svg {
   color: var(--cor-secundaria);
   transition: var(--transicao-padrao);
   font-size: 1.1rem;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .nav a:hover svg {
@@ -305,18 +316,23 @@
 }
 
 .menuButton {
-  display: none;
-  background: transparent;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--cor-primaria);
   color: var(--cor-texto);
   cursor: pointer;
-  padding: 0.5rem;
-  z-index: 100;
+  padding: 0.75rem;
+  border-radius: var(--borda-radius);
   transition: var(--transicao-padrao);
+  margin-left: auto; /* Move o botão para a direita */
+  z-index: 101; /* Mantém o botão acima do menu */
 }
 
 .menuButton:hover {
   color: var(--cor-primaria);
+  box-shadow: var(--efeito-neon);
 }
 
 @media (max-width: 768px) {
@@ -332,34 +348,119 @@
   .nav {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 75%;
+    right: 0;
     height: 100vh;
+    width: 75%;
     background: var(--cor-fundo-secundaria);
     backdrop-filter: blur(10px);
     padding: 5rem 2rem;
-    transition: right 0.3s ease;
-    border-left: 1px solid rgba(59, 130, 246, 0.2);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
   }
 
   .nav.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .nav ul {
     flex-direction: column;
-    gap: 2rem;
+    width: 100%;
   }
 
   .nav a {
-    font-size: 1.2rem;
     width: 100%;
+  }
+
+  .overlay {
+    display: block;
+  }
+}
+
+/* Ajuste para versão desktop */
+@media (min-width: 769px) {
+  .header {
+    position: relative;
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    right: 4rem; /* Espaço para o botão */
+    transform: translateY(-50%);
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    height: auto;
+    width: auto;
+    margin-right: 4rem; /* Espaço para o botão de menu */
+    position: static;
+    transform: none;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    gap: 0.5rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav.active ul {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    padding: 0.5rem 1rem;
+    width: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 1;
+    visibility: visible;
     justify-content: flex-start;
   }
 
-  .logoContainer {
-    transform: scale(0.8);
+  .menuButton {
+    margin-left: 1rem;
+    z-index: 102;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Animar os itens do menu */
+  .nav ul {
+    transition: opacity 0.3s ease;
+  }
+
+  .nav.active ul {
+    opacity: 1;
+  }
+}
+
+/* Ocultar itens quando menu fechado */
+@media (min-width: 769px) {
+  .nav ul {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav.active ul {
+    opacity: 1;
+  }
+}
+
+/* Hide overlay on desktop */
+@media (min-width: 769px) {
+  .overlay {
+    display: none;
   }
 }
 
@@ -383,4 +484,22 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
