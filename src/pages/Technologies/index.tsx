@@ -153,7 +153,7 @@ export function Technologies() {
 
   return (
     <section className={styles.technologies}>
-      <h2 className={styles.sectionTitle}>Tecnologias</h2>
+      <h2 className="sectionTitle" data-text="Tecnologias">Tecnologias</h2>
       <div className={styles.techGrid}>
         {Object.entries(sections).map(([key, section]) => (
           <div key={key} id={key} className={styles.techSection}>

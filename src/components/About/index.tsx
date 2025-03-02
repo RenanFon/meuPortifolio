@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, GraduationCap, Briefcase, Coffee } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 
 export function About() {
@@ -8,8 +9,11 @@ export function About() {
       <div className={styles.aboutContent}>
         <div className={styles.bioContainer}>
           <div className={styles.bioHeader}>
-            <h3>Renan Antunes Fonseca</h3>
-            <span>Desenvolvedor Full Stack</span>
+            <User size={32} weight="duotone" />
+            <div>
+              <h3>Renan Antunes Fonseca</h3>
+              <span>Desenvolvedor Full Stack</span>
+            </div>
           </div>
           <div className={styles.bioContent}>
             <p className={styles.bioText}>
@@ -25,12 +29,27 @@ export function About() {
               em equipe.
             </p>
             <div className={styles.interests}>
-              <h4>Áreas de Interesse</h4>
+              <h4>
+                <Coffee size={24} weight="duotone" />
+                Áreas de Interesse
+              </h4>
               <ul>
-                <li>Arquitetura de Software</li>
-                <li>Clean Code</li>
-                <li>DevOps</li>
-                <li>Testes Automatizados</li>
+                <li>
+                  <Briefcase size={20} weight="duotone" />
+                  Arquitetura de Software
+                </li>
+                <li>
+                  <GraduationCap size={20} weight="duotone" />
+                  Clean Code
+                </li>
+                <li>
+                  <User size={20} weight="duotone" />
+                  DevOps
+                </li>
+                <li>
+                  <Coffee size={20} weight="duotone" />
+                  Testes Automatizados
+                </li>
               </ul>
             </div>
           </div>

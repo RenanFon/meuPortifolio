@@ -65,6 +65,44 @@ html {
   }
 }
 
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px var(--cor-primaria),
+                 0 0 20px var(--cor-primaria),
+                 0 0 30px var(--cor-primaria);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--cor-secundaria),
+                 0 0 30px var(--cor-secundaria),
+                 0 0 40px var(--cor-secundaria);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--cor-primaria),
+                 0 0 20px var(--cor-primaria),
+                 0 0 30px var(--cor-primaria);
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.5;
+    width: 60px;
+  }
+  50% {
+    opacity: 1;
+    width: 100px;
+  }
+}
+
+@keyframes titleShine {
+  0% {
+    background-position: -500% 0;
+  }
+  100% {
+    background-position: 500% 0;
+  }
+}
+
 body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
@@ -197,6 +235,77 @@ a:hover {
   background: var(--hover-gradient);
   border-color: var(--hover-border);
   box-shadow: var(--hover-shadow);
+}
+
+.sectionTitle {
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+  color: var(--cor-texto-destaque);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(37, 99, 235, 0.3) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--borda-radius);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: var(--gradiente-primario);
+  filter: blur(1px);
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--cor-primaria),
+                 0 0 20px var(--cor-secundaria),
+                 0 0 30px var(--cor-terciaria);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--cor-primaria),
+                 0 0 25px var(--cor-secundaria),
+                 0 0 35px var(--cor-terciaria);
+  }
+}
+
+@keyframes titleShine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    width: 100px;
+    opacity: 0.7;
+  }
+  50% {
+    width: 150px;
+    opacity: 1;
+  }
 }
 
 @keyframes gradient-shift {

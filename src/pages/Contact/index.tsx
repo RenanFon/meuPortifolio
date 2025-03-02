@@ -54,7 +54,7 @@ export function Contact() {
 
   return (
     <section className={styles.contactSection}>
-      <h2 className={styles.sectionTitle}>Contato</h2>
+      <h2 className="sectionTitle" data-text="Contato">Contato</h2>
       <div className={styles.contactContent}>
         <div className={styles.contactCard}>
           <h3>Vamos Conversar!</h3>

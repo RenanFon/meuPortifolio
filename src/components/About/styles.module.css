@@ -1,7 +1,11 @@
 .aboutSection {
   padding: var(--espacamento-padrao);
+  min-height: calc(100vh - 80px);
   background: var(--cor-fundo-secundaria);
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .aboutSection::before {
@@ -11,22 +15,43 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(0,255,255,0.1) 25%, 
-    transparent 25%, 
-    transparent 50%, 
-    rgba(0,255,255,0.1) 50%, 
-    rgba(0,255,255,0.1) 75%, 
-    transparent 75%, 
-    transparent);
-  background-size: 100px 100px;
-  animation: moveBackground 15s linear infinite;
+  background: var(--gradiente-fundo);
+  pointer-events: none;
+}
+
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 15s linear infinite;
+  pointer-events: none;
 }
 
 .sectionTitle {
   text-align: center;
-  margin-bottom: 2rem;
-  color: var(--cor-secundaria);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--cor-primaria);
+  border-radius: 2px;
 }
 
 .aboutContent {
@@ -38,24 +63,49 @@
 }
 
 .bioContainer {
-  background: var(--cor-fundo-card);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: var(--efeito-neon);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: var(--borda-radius);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--efeito-neon);
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.bioContainer::before {
+  content: '<AboutMe>';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
+}
+
+.bioContainer::after {
+  content: '</AboutMe>';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Fira Code', monospace;
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 0.8rem;
 }
 
 .bioHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--cor-primaria);
   padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cor-primaria);
 }
 
 .bioHeader h3 {
-  font-size: 2rem;
-  color: var(--cor-primaria);
+  font-size: 1.8rem;
+  color: var(--cor-texto);
   text-shadow: var(--efeito-neon-texto);
-  margin-bottom: 0.5rem;
 }
 
 .bioHeader span {
@@ -71,19 +121,33 @@
 }
 
 .bioText {
+  color: var(--cor-texto-suave);
   line-height: 1.8;
-  color: var(--cor-texto);
   font-size: 1.1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: var(--borda-radius);
+  border-left: 3px solid var(--cor-primaria);
 }
 
 .interests {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .interests h4 {
   color: var(--cor-secundaria);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .interests ul {
@@ -94,17 +158,20 @@
 }
 
 .interests li {
-  color: var(--cor-texto);
-  background: rgba(37, 99, 235, 0.1);
-  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(59, 130, 246, 0.08);
   border-radius: var(--borda-radius);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.15);
   transition: var(--transicao-padrao);
 }
 
 .interests li:hover {
-  transform: translateY(-2px);
-  background: rgba(37, 99, 235, 0.2);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: var(--cor-primaria);
+  transform: translateX(10px);
 }
 
 .skillsContainer {
@@ -200,11 +267,25 @@
     grid-template-columns: 1fr;
   }
   
+  .bioHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .bioHeader h3 {
     font-size: 1.5rem;
+  }
+
+  .bioText {
+    padding: 1rem;
   }
 
   .interests ul {
     grid-template-columns: 1fr;
   }
+}
+
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
 }

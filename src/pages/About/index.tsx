@@ -13,7 +13,7 @@ export function About() {
 
   return (
     <section className={styles.aboutSection}>
-      <h2 className={styles.sectionTitle}>Sobre mim</h2>
+      <h2 className="sectionTitle" data-text="Sobre mim">Sobre mim</h2>
       <div className={styles.aboutContent}>
         <div className={styles.profileSection}>
           <div className={styles.profileImage}>
