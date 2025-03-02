@@ -166,34 +166,27 @@ h1, h2, h3, h4, h5 {
   pointer-events: none;
 }
 
-.tech-bg { the grid-pattern background */
+.tech-bg {
   background: var(--cor-fundo-container);
-  background-image: --cor-fundo-container);
-    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),lace this line that's causing the error */
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);* background-image: url('../assets/images/grid-pattern.png'); */
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-/* Responsividade */dia (max-width: 768px) {
-@media (max-width: 768px) {.pageContainer {
-  .pageContainer {;
+/* Responsividade */
+@media (max-width: 768px) {
+  .pageContainer {
     padding: 1rem;
   }
-  .pageTitle {
+  
   .pageTitle {
     font-size: 2rem;
   }
-   .sectionTitle {
-  .sectionTitle {    font-size: 1.5rem;
-
-
-
-
-
-
-
-
-}  }    padding: 1.5rem;  .sectionContainer {    }    font-size: 1.5rem;  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
   
   .sectionContainer {
     padding: 1.5rem;
