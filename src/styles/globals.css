@@ -1,0 +1,201 @@
+:root {
+  /* Cores principais */
+  --cor-primaria: #3b82f6;
+  --cor-primaria-escura: #1d4ed8;
+  --cor-secundaria: #4f46e5;
+  --cor-destaque: #06b6d4;
+  
+  /* Cores de fundo */
+  --cor-fundo: #0f172a;
+  --cor-fundo-secundaria: rgba(15, 23, 42, 0.9);
+  --cor-fundo-container: rgba(30, 41, 59, 0.5);
+  
+  /* Cores de texto */
+  --cor-texto: #e2e8f0;
+  --cor-texto-suave: #94a3b8;
+  --cor-texto-destaque: #f8fafc;
+  
+  /* Gradientes */
+  --gradiente-primario: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+  --gradiente-hover: linear-gradient(45deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
+  
+  /* Efeitos */
+  --efeito-neon: 0 0 15px rgba(59, 130, 246, 0.5);
+  --efeito-neon-texto: 0 0 10px rgba(59, 130, 246, 0.8);
+  --efeito-container: 0 8px 32px rgba(0, 0, 0, 0.15);
+  
+  /* Layout */
+  --borda-radius: 0.5rem;
+  --espacamento-padrao: 2rem;
+  --max-largura: 1200px;
+  
+  /* Transições */
+  --transicao-padrao: all 0.3s ease;
+}
+
+/* Melhorias na tipografia */
+body {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+h1, h2, h3, h4, h5 {
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.pageContainer {
+  padding: 2rem var(--espacamento-padrao);
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-texto-destaque);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 1rem;
+  text-shadow: var(--efeito-neon-texto);
+}
+
+.pageTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--gradiente-primario);
+  border-radius: var(--borda-radius);
+}
+
+.sectionContainer {
+  background: var(--cor-fundo-container);
+  backdrop-filter: blur(10px);
+  border-radius: var(--borda-radius);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--efeito-container);
+  transition: var(--transicao-padrao);
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.sectionContainer:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: var(--efeito-neon);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: var(--cor-texto-destaque);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: var(--gradiente-primario);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.sectionContainer:hover .sectionTitle::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.interactive-button {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  background: var(--cor-fundo-container);
+  border: 1px solid var(--cor-primaria);
+  border-radius: var(--borda-radius);
+  color: var(--cor-texto);
+  overflow: hidden;
+  transition: var(--transicao-padrao);
+}
+
+.interactive-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradiente-primario);
+  opacity: 0;
+  transition: var(--transicao-padrao);
+}
+
+.interactive-button:hover::before {
+  opacity: 0.1;
+}
+
+.interactive-button:hover {
+  box-shadow: var(--efeito-neon);
+}
+
+.tech-section {
+  position: relative;
+  background: var(--cor-fundo-container);
+  border-radius: var(--borda-radius);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.tech-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    var(--cor-primaria),
+    transparent 70%
+  );
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.tech-bg { the grid-pattern background */
+  background: var(--cor-fundo-container);
+  background-image: --cor-fundo-container);
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),lace this line that's causing the error */
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);* background-image: url('../assets/images/grid-pattern.png'); */
+  background-size: 20px 20px;
+}
+
+/* Responsividade */dia (max-width: 768px) {
+@media (max-width: 768px) {.pageContainer {
+  .pageContainer {;
+    padding: 1rem;
+  }
+  .pageTitle {
+  .pageTitle {
+    font-size: 2rem;
+  }
+   .sectionTitle {
+  .sectionTitle {    font-size: 1.5rem;
+
+
+
+
+
+
+
+
+}  }    padding: 1.5rem;  .sectionContainer {    }    font-size: 1.5rem;  }
+  
+  .sectionContainer {
+    padding: 1.5rem;
+  }
+}

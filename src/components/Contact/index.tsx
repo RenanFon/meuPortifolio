@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.css';
 import whatsappIcon from '@/assets/icons/icons8-whatsapp-24.png';
 import emailIcon from '@/assets/icons/icons8-gmail-login-24.png';

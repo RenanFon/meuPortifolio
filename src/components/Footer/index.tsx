@@ -1,6 +1,5 @@
-import React from 'react';
-import { GithubLogo, LinkedinLogo, EnvelopeSimple } from '@phosphor-icons/react';
 import styles from './styles.module.css';
+import { GithubLogo, LinkedinLogo, EnvelopeSimple } from '@phosphor-icons/react';
 
 export function Footer() {
   return (

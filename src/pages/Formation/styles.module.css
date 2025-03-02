@@ -1,11 +1,13 @@
 .formationSection {
   padding: var(--espacamento-padrao);
   min-height: calc(100vh - 56px); /* Ajustado para nova altura do header */
-  background: var(--cor-fundo-secundaria);
+  background: var(--cor-fundo-container);
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  border-radius: var(--borda-radius);
+  margin-bottom: 2rem;
 }
 
 /* ...rest of existing styles... */

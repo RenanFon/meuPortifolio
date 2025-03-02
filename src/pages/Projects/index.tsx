@@ -1,4 +1,3 @@
-import React from 'react';
 import { GithubLogo } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 

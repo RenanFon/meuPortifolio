@@ -1,13 +1,12 @@
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Router } from './Router';
 import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import './styles/global.css';
+import './styles/globals.css';
+import './styles/animations.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/meuPortifolio">
       <div className="app">
         <Header />
         <Router />

@@ -1,4 +1,3 @@
-import React from 'react';
 import { User, GraduationCap, Briefcase, Coffee } from '@phosphor-icons/react';
 import styles from './styles.module.css';
 

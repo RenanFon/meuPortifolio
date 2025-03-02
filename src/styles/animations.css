@@ -1,0 +1,131 @@
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Removidos os keyframes de float e outros efeitos de escala */
+
+@keyframes glowBorder {
+  0%, 100% { border-color: var(--cor-primaria); }
+  50% { border-color: var(--cor-destaque); }
+}
+
+@keyframes techBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.tech-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--cor-primaria);
+  animation: scanline 2s linear infinite;
+}
+
+.tech-bg {
+  background: linear-gradient(
+    60deg,
+    var(--cor-fundo) 0%,
+    var(--cor-fundo-secundaria) 50%,
+    var(--cor-fundo) 100%
+  );
+  background-size: 200% 200%;
+  animation: techBackground 10s ease infinite;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--cor-primaria);
+}
+
+.tech-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card:hover {
+  box-shadow: var(--efeito-neon);
+}
+
+.tech-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: rotate(45deg) translateY(-100%); }
+  100% { transform: rotate(45deg) translateY(100%); }
+}
+
+.tech-dots {
+  position: relative;
+}
+
+.tech-dots::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--cor-primaria) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+.matrix-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
+  mask-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' font-family='monospace' font-size='20'%3E01%3C/text%3E%3C/svg%3E");
+  opacity: 0.05;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}

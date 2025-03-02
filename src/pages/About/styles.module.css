@@ -282,7 +282,6 @@
 
 .skillsList li:hover {
   background: rgba(37, 99, 235, 0.2);
-  transform: translateY(-2px);
 }
 
 .techStack {
@@ -313,7 +312,6 @@
 }
 
 .techStack li:hover {
-  transform: translateY(-2px);
   background: rgba(37, 99, 235, 0.2);
 }
 
@@ -501,7 +499,6 @@
 }
 
 .tags span:hover {
-  transform: var(--hover-transform);
   background: var(--hover-gradient);
   border-color: var(--hover-border);
   box-shadow: var(--hover-shadow);
@@ -516,7 +513,6 @@
 
 .tags span:hover svg {
   color: var(--cor-texto);
-  transform: scale(1.1);
 }
 
 .tags span::after {
@@ -568,7 +564,6 @@
 }
 
 .highlights li:hover {
-  transform: var(--hover-transform);
   background: var(--hover-gradient);
   border-color: var(--hover-border);
   box-shadow: var(--hover-shadow);
@@ -724,4 +719,85 @@
   }
 }
 
-/* ...existing media queries... */
+.content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.profile {
+  position: relative;
+  border-radius: var(--borda-radius);
+  overflow: hidden;
+  box-shadow: var(--efeito-container);
+  transition: var(--transicao-padrao);
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--borda-radius);
+  transition: transform 0.3s ease;
+}
+
+.profile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.profile:hover img {
+  opacity: 0.9;
+}
+
+.bio {
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: var(--borda-radius);
+  backdrop-filter: blur(8px);
+}
+
+.bioText {
+  color: var(--cor-texto);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.bioText::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: calc(100% - 1rem);
+  width: 2px;
+  background: var(--gradiente-primario);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .bioText {
+    font-size: 1rem;
+    padding-left: 0.75rem;
+  }
+}
